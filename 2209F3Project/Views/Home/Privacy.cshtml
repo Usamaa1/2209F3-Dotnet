@@ -1,0 +1,30 @@
+﻿@using _2209F3Project.Controllers;
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+<h2>@TempData["department"]</h2>
+<h2>@TempData["department1"]</h2>
+
+
+
+
+<p>@TempData["clients"]</p>
+
+<h1>Our Clients</h1>
+
+@if (TempData["clients"] != null)
+{
+    <ul>
+        @foreach (var item in (List<Clients>)TempData["clients"])
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Data Not Found</p>
+}

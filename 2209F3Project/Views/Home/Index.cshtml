@@ -1,0 +1,93 @@
+﻿@using _2209F3Project.Controllers;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="text-center">@ViewData["companyName"]</h1>
+    <p>@ViewData["phone"]</p>
+</div>
+@* <ul>
+    @{
+
+
+        for (int i = 0; i < 10; i++)
+        {
+            <li>Item: @i</li>
+        }
+
+
+
+    }
+</ul> *@
+
+
+
+<h1 class="display-6">Our Employees</h1>
+
+<ol>
+    @{
+        foreach( var item in (string[])ViewData["employees"])
+        {
+            <li>@item</li>
+        }
+    }
+</ol>
+
+<h3>Our Projects</h3>
+<p>@ViewBag.projectName</p>
+Id: @ViewBag.id
+
+
+<h2>Our Equipments</h2>
+
+<ol>
+    @{
+        foreach(var item in ViewBag.equipments)
+        {
+            <li>@item</li>
+        }
+    }
+</ol>
+
+
+ @* <p>@TempData["clients"]</p>  *@
+
+
+
+
+@* <h1>Our Clients</h1>
+
+<ul>
+    @foreach (var item in (List<string>)TempData["clients"])
+    {
+        <li>@item</li>
+    }
+</ul>
+ *@
+
+<h1>Our Clients</h1>
+
+@* @if (TempData["clients"] != null)
+{
+    <ul>
+        @foreach (var item in (List<Clients>)TempData["clients"])
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Data Not Found</p>
+}
+
+ *@
+
+
+
+
+
+

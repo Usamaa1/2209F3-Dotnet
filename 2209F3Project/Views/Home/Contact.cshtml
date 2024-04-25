@@ -1,0 +1,30 @@
+﻿@using _2209F3Project.Controllers;
+
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+
+<h2>@TempData["department"]</h2>
+<h2>@TempData["department1"]</h2>
+
+<h1>Our Clients</h1>
+
+@if (TempData["clients"] != null)
+{
+    <ul>
+        @foreach (var item in (Clients[])TempData["clients"])
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Data Not Found</p>
+}
+
+
+
+
